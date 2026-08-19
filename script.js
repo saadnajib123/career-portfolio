@@ -1,4 +1,4 @@
-// Tab Switching System
+// Tab Switching Functionality
 function openTab(evt, tabName) {
     const tabContents = document.getElementsByClassName("tab-content");
     for (let i = 0; i < tabContents.length; i++) {
@@ -14,7 +14,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add("active");
 }
 
-// PDF Download Generator using html2pdf.js
+// PDF Download Functionality using html2pdf
 function downloadPDF(elementId, filename) {
     const element = document.getElementById(elementId);
     const opt = {
@@ -27,36 +27,44 @@ function downloadPDF(elementId, filename) {
     html2pdf().set(opt).from(element).save();
 }
 
-// Render Big Five Personality Assessment Chart
+// Chart.js - Big Five Personality Radar Chart
 document.addEventListener("DOMContentLoaded", function () {
     const ctx = document.getElementById('bigFiveChart').getContext('2d');
     new Chart(ctx, {
-        type: 'bar',
+        type: 'radar',
         data: {
-            labels: ['Neuroticism', 'Extraversion', 'Openness', 'Agreeableness', 'Conscientiousness'],
+            labels: [
+                'Openness (85%)', 
+                'Conscientiousness (99%)', 
+                'Extraversion (81%)', 
+                'Agreeableness (83%)', 
+                'Emotional Stability (75%)'
+            ],
             datasets: [{
-                label: 'Big Five Inventory Scores',
-                data: [65, 81, 76, 83, 99],
-                backgroundColor: [
-                    '#a855f7',
-                    '#3b82f6',
-                    '#ec4899',
-                    '#f59e0b',
-                    '#10b981'
-                ]
+                label: 'Score Percentile',
+                data: [85, 99, 81, 83, 75],
+                fill: true,
+                backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                borderColor: '#2563eb',
+                pointBackgroundColor: '#2563eb',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#2563eb'
             }]
         },
         options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100
+            elements: {
+                line: {
+                    borderWidth: 2
                 }
             },
-            plugins: {
-                legend: {
-                    display: false
+            scales: {
+                r: {
+                    angleLines: {
+                        display: true
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 100
                 }
             }
         }
