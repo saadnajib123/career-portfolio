@@ -17,6 +17,7 @@
                 <li><a href="#about">Personal Info</a></li>
                 <li><a href="#career-docs">Career Docs</a></li>
                 <li><a href="#assignments">Assignments & Style</a></li>
+                <li><a href="#project">Project</a></li>
                 <li><a href="#reflection">Self-Reflection</a></li>
             </ul>
         </div>
@@ -203,6 +204,24 @@
                         <canvas id="bigFiveChart"></canvas>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3.5: Featured Project -->
+    <section id="project" class="section bg-alt">
+        <div class="container">
+            <h2>Featured Project: Multi-Zone Fire Alarm System</h2>
+            <div class="card project-card">
+                <div class="image-wrapper">
+                    <img src="assets/project_pic.jpg" alt="PIC16F877A Multi-Zone Fire Alarm System" class="portfolio-img">
+                </div>
+                <ul class="project-details">
+                    <li><strong>Hardware setup:</strong> A multi-zone fire alarm system on the PIC16F877A, with smoke and temperature sensors across four zones — toilet, smoking area, non-smoking area, and kitchen.</li>
+                    <li><strong>Display:</strong> 16x2 LCD for status output. I debugged ADCON1 configuration and the initialization sequence to get it working correctly.</li>
+                    <li><strong>Compiler issues:</strong> I ran into forward-reference errors in MPASMWIN, which I worked through.</li>
+                    <li><strong>Sensor reading:</strong> I iterated on the ADC channel configuration a few times to get reliable reads across the zone sensors.</li>
+                </ul>
             </div>
         </div>
     </section>
