@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
@@ -64,7 +63,7 @@
     <section id="career-docs" class="section bg-alt">
         <div class="container">
             <h2>Career Documents</h2>
-            <p class="subtitle">Download printable versions or view directly below.</p>
+            <p class="subtitle">Select a tab to view each document inline.</p>
 
             <div class="tabs">
                 <button class="tab-btn active" onclick="openTab(event, 'pdp')">Development Plan</button>
@@ -72,100 +71,24 @@
                 <button class="tab-btn" onclick="openTab(event, 'cover-letter')">Cover Letter</button>
             </div>
 
-            <!-- PDP Content -->
+            <!-- PDP Content Viewer -->
             <div id="pdp" class="tab-content active">
-                <div class="doc-actions">
-                    <a href="assets/Saad Najib_Assignment_1.8.pdf" download="Saad Najib_Assignment_1.8.pdf" class="btn btn-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Download PDP PDF
-                    </a>
-                </div>
-                <div id="pdp-render" class="printable-doc">
-                    <h3>Professional Development Plan</h3>
-                    <p><strong>Date:</strong> July 2, 2026</p>
-                    <p><strong>Long-Term Goal:</strong> Travel to many countries in the world by age 35.</p>
-                    
-                    <table class="doc-table">
-                        <thead>
-                            <tr>
-                                <th>Short-Term Goals</th>
-                                <th>Action Steps</th>
-                                <th>Target Date</th>
-                                <th>Resources Needed</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Goal 1:</strong> Graduate top of class</td>
-                                <td>Study hard continuously</td>
-                                <td>Sept 14, 2026</td>
-                                <td>Academic Focus</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Goal 2:</strong> Secure employment within 6 months of graduation</td>
-                                <td>
-                                    • Complete external technical certifications<br>
-                                    • Gain experience across security fields
-                                </td>
-                                <td>Ongoing</td>
-                                <td>Online courses, Industry Labs</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Goal 3:</strong> Build $500k Net Worth</td>
-                                <td>
-                                    • Maintain career dedication<br>
-                                    • Launch cybersecurity consultancy/business
-                                </td>
-                                <td>Long Term</td>
-                                <td>Capital, Industry Expertise</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="pdf-viewer-container">
+                    <iframe src="assets/Saad Najib_Assignment_1.8.pdf" width="100%" height="600px" style="border: none; border-radius: 8px;"></iframe>
                 </div>
             </div>
 
-            <!-- CV Content -->
+            <!-- CV Content Viewer -->
             <div id="cv" class="tab-content">
-                <div class="doc-actions">
-                    <a href="assets/Saad Najib_CV_Chp3.pdf" download="Saad Najib_CV_Chp3.pdf" class="btn btn-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Download CV PDF
-                    </a>
-                </div>
-                <div id="cv-render" class="printable-doc">
-                    <h2>Saad Najib</h2>
-                    <p>+961 81 657577 | saadnajib666@gmail.com | Chehime, Mount Lebanon</p>
-                    <hr>
-                    <h4>Objective</h4>
-                    <p>Computer Engineering student at Beirut Arab University (GPA: 3.87/4.0) with a strong interest in cybersecurity, seeking an internship in security, software development, industry-relevant skills and contribute to secure system design.</p>
-                    
-                    <h4>Education</h4>
-                    <p><strong>B.Eng. Computer Engineering</strong> — Beirut Arab University (Sep 2024 – Present)<br>
-                    GPA: 3.87 / 4.0 | Coursework: Cryptography, Cybersecurity</p>
-                    <p><strong>Lebanese Baccalaureate (General Sciences)</strong> — Iklim High School (2024)</p>
-
-                    <h4>Technical Skills</h4>
-                    <p><strong>Languages:</strong> C, C++, Java | <strong>Systems:</strong> Windows, Linux | <strong>Tools:</strong> Git, GitHub, VS Code, Eclipse</p>
-
-                    <h4>Experience & Leadership</h4>
-                    <p><strong>Private English Tutor</strong> (2021–2024): Managed scheduling, lesson planning, and student communications.</p>
-                    <p><strong>Volunteering:</strong> Red Cross Volunteer (BAU Club), IEEE Event Planner & Public Relations Committee Member.</p>
+                <div class="pdf-viewer-container">
+                    <iframe src="assets/Saad Najib_CV_Chp3.pdf" width="100%" height="600px" style="border: none; border-radius: 8px;"></iframe>
                 </div>
             </div>
 
-            <!-- Cover Letter Content -->
+            <!-- Cover Letter Content Viewer -->
             <div id="cover-letter" class="tab-content">
-                <div class="doc-actions">
-                    <a href="assets/Saad_Najib_Cover_Letter_Chp3.pdf" download="Saad_Najib_Cover_Letter_Chp3.pdf" class="btn btn-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Download Cover Letter PDF
-                    </a>
-                </div>
-                <div id="cl-render" class="printable-doc">
-                    <p><strong>August 14, 2026</strong></p>
-                    <p>Recruitment Team<br>United Nations Economic and Social Commission for Western Asia (ESCWA)<br>Beirut, Lebanon</p>
-                    <p><strong>Subject: Application for Cybersecurity Internship</strong></p>
-                    <p>Dear ESCWA Recruitment Team,</p>
-                    <p>I am writing to apply for the Cybersecurity Internship within ESCWA's Information and Communication Technology Division. I am a second-year Computer Engineering student at Beirut Arab University (GPA: 3.87/4.0), with coursework concentrated in cryptography and cybersecurity...</p>
-                    <p>My coursework has given me a working foundation in cryptographic protocols, secure system design, and vulnerability-aware programming in C, C++, and Java...</p>
-                    <p>Sincerely,<br><strong>Saad Najib</strong></p>
+                <div class="pdf-viewer-container">
+                    <iframe src="assets/Saad_Najib_Cover_Letter_Chp3.pdf" width="100%" height="600px" style="border: none; border-radius: 8px;"></iframe>
                 </div>
             </div>
         </div>
