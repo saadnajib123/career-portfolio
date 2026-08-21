@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
@@ -63,7 +64,7 @@
     <section id="career-docs" class="section bg-alt">
         <div class="container">
             <h2>Career Documents</h2>
-            <p class="subtitle">Select a tab to view or open each document in a new tab.</p>
+            <p class="subtitle">Download printable versions or view directly below.</p>
 
             <div class="tabs">
                 <button class="tab-btn active" onclick="openTab(event, 'pdp')">Development Plan</button>
@@ -73,13 +74,13 @@
 
             <!-- PDP Content -->
             <div id="pdp" class="tab-content active">
-                <div class="doc-actions" style="margin-bottom: 20px;">
-                    <a href="assets/Saad_Najib_Assignment_1.8.pdf" target="_blank" class="btn btn-primary">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Professional Development Plan
+                <div class="doc-actions">
+                    <a href="assets/Saad Najib_Assignment_1.8.pdf" download="Saad Najib_Assignment_1.8.pdf" class="btn btn-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Download PDP PDF
                     </a>
                 </div>
-                <div class="printable-doc card">
-                    <h3>Professional Development Plan Summary</h3>
+                <div id="pdp-render" class="printable-doc">
+                    <h3>Professional Development Plan</h3>
                     <p><strong>Date:</strong> July 2, 2026</p>
                     <p><strong>Long-Term Goal:</strong> Travel to many countries in the world by age 35.</p>
                     
@@ -124,12 +125,12 @@
 
             <!-- CV Content -->
             <div id="cv" class="tab-content">
-                <div class="doc-actions" style="margin-bottom: 20px;">
-                    <a href="assets/Saad_Najib_CV_Chp3.pdf" target="_blank" class="btn btn-primary">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open CV in New Tab
+                <div class="doc-actions">
+                    <a href="assets/Saad Najib_CV_Chp3.pdf" download="Saad Najib_CV_Chp3.pdf" class="btn btn-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Download CV PDF
                     </a>
                 </div>
-                <div class="printable-doc card">
+                <div id="cv-render" class="printable-doc">
                     <h2>Saad Najib</h2>
                     <p>+961 81 657577 | saadnajib666@gmail.com | Chehime, Mount Lebanon</p>
                     <hr>
@@ -152,20 +153,18 @@
 
             <!-- Cover Letter Content -->
             <div id="cover-letter" class="tab-content">
-                <div class="doc-actions" style="margin-bottom: 20px;">
-                    <a href="assets/Saad_Najib_Cover_Letter_Chp3.pdf" target="_blank" class="btn btn-primary">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Cover Letter in New Tab
+                <div class="doc-actions">
+                    <a href="assets/Saad_Najib_Cover_Letter_Chp3.pdf" download="Saad_Najib_Cover_Letter_Chp3.pdf" class="btn btn-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Download Cover Letter PDF
                     </a>
                 </div>
-                <div class="printable-doc card">
+                <div id="cl-render" class="printable-doc">
                     <p><strong>August 14, 2026</strong></p>
                     <p>Recruitment Team<br>United Nations Economic and Social Commission for Western Asia (ESCWA)<br>Beirut, Lebanon</p>
                     <p><strong>Subject: Application for Cybersecurity Internship</strong></p>
-                    <br>
                     <p>Dear ESCWA Recruitment Team,</p>
                     <p>I am writing to apply for the Cybersecurity Internship within ESCWA's Information and Communication Technology Division. I am a second-year Computer Engineering student at Beirut Arab University (GPA: 3.87/4.0), with coursework concentrated in cryptography and cybersecurity...</p>
                     <p>My coursework has given me a working foundation in cryptographic protocols, secure system design, and vulnerability-aware programming in C, C++, and Java...</p>
-                    <br>
                     <p>Sincerely,<br><strong>Saad Najib</strong></p>
                 </div>
             </div>
